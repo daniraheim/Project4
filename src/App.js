@@ -1,24 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
+import Layout from './Layout';
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Register from './Register';
+import Login from './Login';
+import axios from 'axios';
+
 
 function App() {
+
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    axios.get('http://localhost:3000/api/users/login').then(response => {
+      //console.log(response.data);
+      setUsers(response.data);
+    })
+  }, []);
+
+  function addUser(user) {
+    console.log(user)
+    axios.post('http://localhost:3000/api/users/register', user).then(response => {
+      alert(response.data.message);
+    })
+    const newUser = { ...user, id: Date.now()};
+    setUsers([...users, newUser]);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <Layout>
+            <Routes>
+               <Route path="/" element={ <Register onAdd={addUser} /> }   />
+
+               <Route path="/login" element={ <Login  /> }   />
+
+            </Routes>
+        </Layout>
+    </Router>
+
   );
 }
 
