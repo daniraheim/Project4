@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Login () {
+  const navigate = useNavigate();
   const [showPopup, setShowPopup] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [loginData, setLoginData] = useState({
     username: '',
     password: '',
   });
- 
-const [loading, setLoading] = useState(false);
   
 function handleLoginChange (e) {
     const { name, value } = e.target;
@@ -16,9 +16,8 @@ function handleLoginChange (e) {
   };
 
   const handleLoginSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true); 
-    console.log('Submitting login form...')
+    e.preventDefault()
+    navigate('/questions');
   
     try {
       const response = await fetch('http://localhost:3000/api/login', {
@@ -26,27 +25,21 @@ function handleLoginChange (e) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: loginData.username, password: loginData.password })
       });
-
-      console.log('Response', response);
   
       const data = await response.json();
-      
-      console.log('Data received', data)
   
-      if (response.ok) {
+      if (data.success) {
         alert('Login successful!');
+        navigate('/questions');
         setShowPopup(false);
         setErrorMessage('');
-        setLoginData({ username: '', password: '' }); 
-
       } else {
         setErrorMessage(data.message);
       }
     } catch (error) {
-      console.error('Error during login:', error);
+      
       setErrorMessage('Something went wrong. Try again.');
-    }finally {
-      setLoading(false); 
+    }
   };
 
 return (
@@ -81,7 +74,7 @@ return (
             required
           />
           </div>
-            {errorMessage && <p style= {{ color: 'red' }} aria-live="assertive"> {errorMessage}</p>}
+            {errorMessage && <p style= {{ color: 'red' }}> {errorMessage}</p>}
             <div>
             <button className="btn btn-success" type="submit" >Submit</button>
             </div>
@@ -94,6 +87,6 @@ return (
      )}
      </div>
    )  
-  };
-}
+};
+ 
 export default Login;

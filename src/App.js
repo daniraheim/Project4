@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Register from './Register';
 import Login from './Login';
+import Questions from './Questions';
 import axios from 'axios';
 
 
@@ -35,6 +36,8 @@ function App() {
                <Route path="/" element={ <Register onAdd={addUser} /> }   />
 
                <Route path="/login" element={ <Login  /> }   />
+
+               <Route path="/questions" element={ <Questions  /> }  />
 
             </Routes>
         </Layout>
