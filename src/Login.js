@@ -43,7 +43,7 @@ function handleLoginChange (e) {
   };
 
 return (
-   <div>
+   <div className="text-center mb 4">
     <button type="button" className="btn btn-secondary" onClick={() => setShowPopup(true)}>Please Sign In</button>
     {showPopup && (
       <div className="overlay">

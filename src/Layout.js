@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import './App.css';
 
 function Layout ({children}) {
     return (
         <div className="container mt-4">
-            <h2 className="text-center mb 4">Mindfulness</h2>
+            <h1 className="text-center mb 4">Mindfulness</h1>
             <nav>
-                <Link className="btn btn-primary me-2" to="/">Register</Link>
+                <Link className="btn btn-primary me-2 text-center mb 4" to="/">Welcome</Link>
                 <Link className="btn btn-info" to="/login">Login</Link>
             </nav>
             {children}

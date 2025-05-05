@@ -14,7 +14,7 @@ function Questions() {
     ],
     'Self Awareness': [
       'What emotion are you feeling most today?',
-      'What triggered that emotion?',
+      'How do you handle stressful situations?',
       'What thought keeps coming back to you lately?'
     ],
     'Self Love': [

@@ -47,10 +47,10 @@ function handleSubmit (e) {
     }
 
   return (
-    <div>
-      <h3>Welcome to Our Site</h3>
+    <div className="text-center mb 4">
+      <h2 className="text-center mb 4">Welcome to Our Site</h2>
       <form>
-      <button className="btn btn-secondary" onClick={() => setShowPopup(true)}>Create a Login</button>
+      <button className="btn btn-secondary text-center mb 4" onClick={() => setShowPopup(true)}>Create a Login</button>
       {showPopup && (
         <div className="overlay">
           <div className="popup">
