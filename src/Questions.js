@@ -131,10 +131,23 @@ function Questions() {
             </button>
 
             {submitted && (
-              <div className="alert alert-success mt-3">
-                Your answer has been submitted!
-              </div>
-            )}
+  <div className="mt-3">
+    <div className="alert alert-success">
+      Your answer has been submitted!
+    </div>
+    <button
+      type="button"
+      className="btn btn-secondary mt-2"
+      onClick={() => {
+        setSelectedQuestionIndex(null);
+        setAnswer('');
+        setSubmitted(false);
+      }}
+    >
+      Next Question
+    </button>
+  </div>
+)}
           </div>
         )}
       </form>
