@@ -1,3 +1,14 @@
+body {
+  margin: 0;
+  background-image: url('./images/landscape.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+
 .overlay {
   position: fixed;
   top: 0; left: 0;
@@ -12,25 +23,16 @@
 .popup {
   background: white;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 10px;
   width: 300px;
-  transform: scale(0.7);
-  opacity: 0;
+  margin: auto;
+  z-index: 10;
   animation: popIn 0.3s ease forwards;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 
-@keyframes popIn {
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
+
 
 
 
