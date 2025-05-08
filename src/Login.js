@@ -17,10 +17,10 @@ function handleLoginChange (e) {
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault()
-    navigate('/questions');
+    // navigate('/questions');
   
     try {
-      const response = await fetch('http://localhost:3000/api/login', {
+      const response = await fetch('http://localhost:3000/api/users/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: loginData.username, password: loginData.password })

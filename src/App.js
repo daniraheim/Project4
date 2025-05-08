@@ -13,12 +13,7 @@ function App() {
 
   const [users, setUsers] = useState([])
 
-  useEffect(() => {
-    axios.get('http://localhost:3000/api/users/login').then(response => {
-      //console.log(response.data);
-      setUsers(response.data);
-    })
-  }, []);
+
 
   function addUser(user) {
     console.log(user)
