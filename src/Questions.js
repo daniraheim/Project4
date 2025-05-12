@@ -118,7 +118,7 @@ function Questions() {
         {/* Question Display + Answer Input */}
         {selectedQuestion && (
           <div className="mt-4">
-            <h4>{selectedQuestion}</h4>
+            <h3 className="fw-bold">{selectedQuestion}</h3>
             <textarea
               className="form-control mt-2"
               placeholder="Type your answer here..."

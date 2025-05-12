@@ -48,7 +48,7 @@ function handleSubmit (e) {
 
   return (
     <div className="text-center mb 4">
-      <h2 className="text-center mb 4">Welcome to Our Site</h2>
+      <h2 className="text-center mb 4 fw-bold">Welcome to Our Site</h2>
       <form>
       <button className="btn btn-secondary text-center mb 4" onClick={() => setShowPopup(true)}>Create a Login</button>
       {showPopup && (
