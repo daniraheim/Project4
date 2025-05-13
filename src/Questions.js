@@ -65,7 +65,6 @@ function Questions() {
   return (
     <div className="row g-2">
       <form onSubmit={handleSubmit}>
-        {/* Category Select */}
         <div className="col-md">
           <label htmlFor="category">Question Category</label>
           <div className="form-floating">
@@ -89,7 +88,6 @@ function Questions() {
           </div>
         </div>
 
-        {/* Question Number Select */}
         {selectedCategory && (
           <div className="col-md mt-3">
             <label htmlFor="questionSelect">Select Question</label>
@@ -113,8 +111,7 @@ function Questions() {
             </div>
           </div>
         )}
-
-        {/* Question Display + Answer Input */}
+        
         {selectedQuestion && (
           <div className="mt-4">
             <h3 className="fw-bold">{selectedQuestion}</h3>
