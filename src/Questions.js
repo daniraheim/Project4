@@ -55,7 +55,6 @@ function Questions() {
     e.preventDefault();
     setSubmitted(true);
     console.log('Submitted Answer:', answer);
-    // You could send the answer to a backend here
   };
 
   const selectedQuestion =

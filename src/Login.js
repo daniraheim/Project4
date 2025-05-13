@@ -17,7 +17,6 @@ function handleLoginChange (e) {
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault()
-    // navigate('/questions');
   
     try {
       const response = await fetch('http://localhost:3000/api/users/login', {
